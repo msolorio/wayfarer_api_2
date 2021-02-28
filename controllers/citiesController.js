@@ -8,8 +8,9 @@ function index(req, res) {
   City.find()
     .populate('posts')
     .exec()
-    .then((allCities) => {
-      res.send(allCities);
+    .then((allCities) => res.send(allCities))
+    .catch((err) => {
+      console.log('Error finding all cities:', err);
     });
 }
 

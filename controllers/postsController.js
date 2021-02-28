@@ -21,7 +21,7 @@ async function show(req, res) {
   console.log('Hit posts show controller');
 
   try { 
-    const foundPost = await Post.findById(req.params.postId);
+    const foundPost = await Post.findById(req.params.postId).populate('city').exec();
     res.send(foundPost);
   } catch(err) {
     console.log(err);

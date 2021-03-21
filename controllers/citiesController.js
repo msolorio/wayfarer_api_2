@@ -15,7 +15,7 @@ function index(req, res) {
 }
 
 async function create(req, res) {
-  const newCity = { name, cityImg } = req.body;
+  const newCity = { cityName, country, imgUrl } = req.body;
   newCity.posts = [];
 
   const createdCity = await City.create(newCity);

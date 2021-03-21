@@ -6,15 +6,15 @@ const postSchema = new mongoose.Schema({
     ref: 'City',
     required: true
   },
-  title: {
+  postTitle: {
     type: String,
     required: true
   },
-  body: {
+  postBody: {
     type: String,
     required: true
   },
-  postImg: String
+  postImgUrl: String
 });
 
 const Post = mongoose.model('Post', postSchema);

@@ -1,17 +1,21 @@
 const mongoose = require('mongoose');
 
 const citySchema = new mongoose.Schema({
-  name: {
+  cityName: {
     type: String,
     required: true
   },
+  country: {
+    type: String,
+    required: true
+  },
+  imgUrl: String,
   posts: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Post'
     }
-  ],
-  cityImg: String
+  ]
 });
 
 const City = mongoose.model('City', citySchema);
